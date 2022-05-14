@@ -1,0 +1,22 @@
+<div class="container wrapper">
+  <div class="container flex">
+    <div class="item flex-item-1" *ngFor="let suit of card.suits">
+      <div class="btn full" (click)="handleSuit(suit)">
+        <button [className]="suit | classChangeColor">{{suit}}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container flex">
+    <div class="item flex-item-2" *ngFor="let ranked of card.rankeds">
+      <button class="btn" (click)="handleRanked(ranked)">{{ranked}}</button>
+    </div>
+  </div>
+
+  <div class="container flex card">
+    <div [className]="suit | classChangeColor">
+      <div class="rank">{{ ranked }}</div>
+      <div class="suit">{{ suit }}</div>
+    </div>
+  </div>
+</div>
